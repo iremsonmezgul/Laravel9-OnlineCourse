@@ -25,15 +25,14 @@
                     <div class="clearfix">
                         <div class="pull-left">
                             <h4 class="text-blue h4">Category Elements</h4>
+                            <form role="form" action="/admin/category/store" method="post" enctype="multipart/form-data">
                             <p class="mb-30">All bootstrap element classies</p>
                         </div>
                     </div>
                     <form>
-                        <div class="form-group" action="/admin/category/store" method="post">
                             @csrf
                             <label>Title</label>
                             <input class="form-control" type="text" name="title" placeholder="Title">
-                        </div>
                         <div class="form-group" >
                             <label>Keywords</label>
                             <input class="form-control" type="text" name="keywords" placeholder="Keywords">
@@ -55,11 +54,12 @@
                                         <option value="1">False</option>
                               </select>
                         </div>
-                        <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">Save</button>
-                        </div>
-                                </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="reset" class="btn btn-primary">Reset</button>
                 </div>
+                </div>
+        </div>
+
                     </form>
                     <div class="collapse collapse-box" id="horizontal-basic-form1">
                         <div class="code-box">
