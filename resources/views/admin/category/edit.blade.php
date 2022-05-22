@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title', 'Add Category')
+@section('title', 'Edit Category :'.$data->title)
 
 @section('content')
     <div class="main-container">
@@ -10,12 +10,12 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
                             <div class="title">
-                                <h4>Add Category</h4>
+                                <h4>Edit Category: {{$data->title}}</h4>
                             </div>
                             <nav aria-label="breadcrumb" role="navigation">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="/admin">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Add Category</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Edit Category</li>
                                 </ol>
                             </nav>
                         </div>
@@ -25,21 +25,21 @@
                     <div class="clearfix">
                         <div class="pull-left">
                             <h4 class="text-blue h4">Category Elements</h4>
-                            <form role="form" action="/admin/category/store" method="post" enctype="multipart/form-data">
+                            <form role="form" action="/admin/category/update/{{$data->id}}" method="post" enctype="multipart/form-data">
                             <p class="mb-30">All bootstrap element classies</p>
                         </div>
                     </div>
                     <form>
                             @csrf
                             <label>Title</label>
-                            <input class="form-control" type="text" name="title" placeholder="Title">
+                            <input class="form-control" type="text" name="title" value="{{$data->title}}">
                         <div class="form-group" >
                             <label>Keywords</label>
-                            <input class="form-control" type="text" name="keywords" placeholder="Keywords">
+                            <input class="form-control" type="text" name="keywords"  value="{{$data->keywords}}">
                         </div>
                         <div class="form-group" >
                             <label>Description</label>
-                            <input class="form-control" type="text" name="description" placeholder="Description">
+                            <input class="form-control" type="text" name="description"  value="{{$data->description}}">
                         </div>
 
                         <div class="form-group">
@@ -50,12 +50,12 @@
                         <div class="form-group">
                               <label>Status</label>
                               <select class="form-control" name="status">
-                                  <option>True</option>
-                                  <option>False</option>
+                                        <option selected>{{$data->status}}</option>
+                                        <option>True</option>
+                                        <option>False</option>
                               </select>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                        <button type="reset" class="btn btn-primary">Reset</button>
+                        <button type="submit" class="btn btn-primary">Update Data</button>
                 </div>
                 </div>
         </div>
