@@ -10,7 +10,7 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
                             <div class="title">
-                                <h4>Category List</h4>
+                                <a href="/admin/category/create" class="btn btn-success btn-lg btn-block " style="width: 200px" >Add Category</a>
                             </div>
                             <nav aria-label="breadcrumb" role="navigation">
                                 <ol class="breadcrumb">
