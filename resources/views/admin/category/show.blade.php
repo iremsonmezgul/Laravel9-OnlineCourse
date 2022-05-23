@@ -9,14 +9,14 @@
                 <div class="page-header">
                     <div class="row mb-2">
                         <div class="col-sm-3">
-                                <a href="/admin/category/edit/{{$data->id}}" class="btn btn-primary btn-lg btn-block " style="width: 200px" >Edit</a>
+                                <a href="{{route('admin.category.edit',['id'=>$data->id])}}" class="btn btn-primary btn-lg btn-block " style="width: 200px" >Edit</a>
                             </div>
                            <div class="col-sm-3">
-                                <a href="/admin/category/destroy/{{$data->id}}"  onclick="return confirm('Are you sure ?')" class="btn btn-danger btn-lg btn-block " style="width: 200px" >Delete</a>
+                                <a href="{{route('admin.category.destroy',['id'=>$data->id])}}"  onclick="return confirm('Are you sure ?')" class="btn btn-danger btn-lg btn-block " style="width: 200px" >Delete</a>
                             </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                    <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Home</a></li>
                                     <li class="breadcrumb-item active">Show Category</li>
                                 </ol>
                         </div>

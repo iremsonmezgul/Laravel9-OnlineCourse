@@ -14,7 +14,7 @@
                             </div>
                             <nav aria-label="breadcrumb" role="navigation">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Edit Category</li>
                                 </ol>
                             </nav>
@@ -25,8 +25,7 @@
                     <div class="clearfix">
                         <div class="pull-left">
                             <h4 class="text-blue h4">Category Elements</h4>
-                            <form role="form" action="/admin/category/update/{{$data->id}}" method="post" enctype="multipart/form-data">
-                            <p class="mb-30">All bootstrap element classies</p>
+                            <form role="form" action="{{route('admin.category.update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
                         </div>
                     </div>
                     <form>

@@ -10,11 +10,11 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
                             <div class="title">
-                                <a href="/admin/category/create" class="btn btn-success btn-lg btn-block " style="width: 200px" >Add Category</a>
+                                <a href="{{route('admin.category.create')}}" class="btn btn-success btn-lg btn-block " style="width: 200px" >Add Category</a>
                             </div>
                             <nav aria-label="breadcrumb" role="navigation">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Category List</li>
                                 </ol>
                             </nav>
@@ -50,10 +50,10 @@
                             <td>{{$rs->description}}</td>
                             <td>{{$rs->image}}</td>
                             <td>{{$rs->status}}</td>
-                            <td><a href="/admin/category/edit/{{$rs->id}}" class="btn btn-block btn-info btn-sm">Edit</a> </td>
-                            <td><a href="/admin/category/destroy/{{$rs->id}}" class="btn btn-block btn-danger btn-sm"
+                            <td><a href="{{route('admin.category.edit',['id'=>$rs->id])}}" class="btn btn-block btn-info btn-sm">Edit</a> </td>
+                            <td><a href="{{route('admin.category.destroy',['id'=>$rs->id])}}" class="btn btn-block btn-danger btn-sm"
                                 onclick="return confirm('Are you sure ?')">Delete</a> </td>
-                            <td><a href="/admin/category/show/{{$rs->id}}" class="btn btn-block btn-success btn-sm">Show</a> </td>
+                            <td><a href="{{route('admin.category.show',['id'=>$rs->id])}}" class="btn btn-block btn-success btn-sm">Show</a> </td>
                         </tr>
                         @endforeach
                         </tbody>
