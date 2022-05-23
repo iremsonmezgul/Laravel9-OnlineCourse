@@ -25,7 +25,7 @@
                     <div class="clearfix">
                         <div class="pull-left">
                             <h4 class="text-blue h4">Category Elements</h4>
-                            <form role="form" action="{{route('admin.category.create')}}" method="post" enctype="multipart/form-data">
+                            <form role="form" action="{{route('admin.category.store')}}" method="post" enctype="multipart/form-data">
                             <p class="mb-30">All bootstrap element classies</p>
                         </div>
                     </div>
@@ -43,8 +43,13 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Image</label>
-                            <input type="file" class="form-control-file form-control height-auto">
+                            <label for="exampleInputFile">Image</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" name="image" >
+                                    <label class="custom-file-label" for="exampleInputFıle">Choose image file</label>
+                            </div>
+                        </div>
                         </div>
 
                         <div class="form-group">
@@ -54,8 +59,7 @@
                                   <option>False</option>
                               </select>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                        <button type="reset" class="btn btn-primary">Reset</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
                 </div>
                 </div>
         </div>
