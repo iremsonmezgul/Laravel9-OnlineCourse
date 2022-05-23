@@ -26,12 +26,26 @@
                         <div class="pull-left">
                             <h4 class="text-blue h4">Category Elements</h4>
                             <form role="form" action="{{route('admin.category.store')}}" method="post" enctype="multipart/form-data">
-                            <p class="mb-30">All bootstrap element classies</p>
                         </div>
                     </div>
                     <form>
-                            @csrf
-                            <label>Title</label>
+                        @csrf
+
+                        <div class="form-group">
+                        <label>Parent Category</label>
+
+                        <select class="form-control select2" name="parent_id" style="width: 200px">
+                            <option value="0" selected ="selected">Main Category</option>
+                            @foreach($data as $rs)
+                                <option value="{{ $rs->id }}"> {{ \App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}} </option>
+                      @endforeach
+                        </select>
+
+                    </div>
+
+
+
+                        <label>Title</label>
                             <input class="form-control" type="text" name="title" placeholder="Title">
                         <div class="form-group" >
                             <label>Keywords</label>

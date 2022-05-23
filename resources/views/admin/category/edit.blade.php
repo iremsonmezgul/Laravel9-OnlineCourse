@@ -30,6 +30,20 @@
                     </div>
                     <form>
                             @csrf
+                        <div class="form-group">
+                            <label>Parent Category</label>
+
+                            <select class="form-control select2" name="parent_id" style="width: 200px">
+                                <option value="0" selected ="selected">Main Category</option>
+                                @foreach($datalist as $rs)
+                                    <option value="{{$rs->id}}" @if ($rs->id == $data->parent_id) selected="selected" @endif >
+                                    {{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}
+                                    </option>
+                                @endforeach
+                            </select>
+
+                        </div>
+
                             <label>Title</label>
                             <input class="form-control" type="text" name="title" value="{{$data->title}}">
                         <div class="form-group" >
