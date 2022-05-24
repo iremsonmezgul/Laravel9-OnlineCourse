@@ -35,6 +35,7 @@
                             <th scope="col">Title</th>
                             <th scope="col">Price</th>
                             <th scope="col">Image</th>
+                            <th scope="col">Image Gallery</th>
                             <th scope="col">Status</th>
                             <th scope="col">Edit</th>
                             <th scope="col">Delete</th>
@@ -53,6 +54,8 @@
                                         <img src="{{Storage::url($rs->image)}}" style="height: 40px">
                                     @endif
                                 </td>
+
+                                <td> </td>
 
                                 <td>{{$rs->status}} </td>
                                 <td><a href="{{route('admin.course.edit',['id'=>$rs->id])}}" class="btn btn-block btn-info btn-sm">Edit</a> </td>
