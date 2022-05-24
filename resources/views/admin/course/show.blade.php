@@ -35,7 +35,9 @@
                             </tr>
                             <tr>
                                 <th>Category</th>
-                                <th>{{$data->category_id}}</th>
+                                <th>
+                                    {{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($data->category,$data->category->title)}}
+                                </th>
                             </tr>
                             <tr>
                                 <th>Title</th>
