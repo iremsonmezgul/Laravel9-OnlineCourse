@@ -1,6 +1,6 @@
 @extends('layouts.adminbase')
 
-@section('title', 'Category List')
+@section('title', 'Course List')
 
 @section('content')
     <div class="main-container">
@@ -10,12 +10,12 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
                             <div class="title">
-                                <a href="{{route('admin.category.create')}}" class="btn btn-success btn-lg btn-block " style="width: 200px" >Add Category</a>
+                                <a href="{{route('admin.course.create')}}" class="btn btn-success btn-lg btn-block " style="width: 200px" >Add Course</a>
                             </div>
                             <nav aria-label="breadcrumb" role="navigation">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Category List</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Course List</li>
                                 </ol>
                             </nav>
                         </div>
@@ -24,15 +24,16 @@
                 <div class="pd-20 card-box mb-30">
                     <div class="clearfix mb-20">
                         <div class="pull-left">
-                            <h4 class="text-blue h4">Category List</h4>
+                            <h4 class="text-blue h4">Course List</h4>
                         </div>
                     </div>
                     <table class="table table-bordered">
                         <thead>
                         <tr>
                             <th scope="col">Id</th>
-                            <th scope="col">Parent</th>
+                            <th scope="col">Category</th>
                             <th scope="col">Title</th>
+                            <th scope="col">Price</th>
                             <th scope="col">Image</th>
                             <th scope="col">Status</th>
                             <th scope="col">Edit</th>
@@ -46,6 +47,7 @@
                                 <td>{{$rs->id}}</td>
                                 <td>{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}} </td>
                                 <td>{{$rs->title}}</td>
+                                <td>{{$rs->price}}</td>
                                 <td>
                                     @if ($rs->image)
                                         <img src="{{Storage::url($rs->image)}}" style="height: 40px">
@@ -53,10 +55,10 @@
                                 </td>
 
                                 <td>{{$rs->status}} </td>
-                                <td><a href="{{route('admin.category.edit',['id'=>$rs->id])}}" class="btn btn-block btn-info btn-sm">Edit</a> </td>
-                                <td><a href="{{route('admin.category.destroy',['id'=>$rs->id])}}" class="btn btn-block btn-danger btn-sm"
+                                <td><a href="{{route('admin.course.edit',['id'=>$rs->id])}}" class="btn btn-block btn-info btn-sm">Edit</a> </td>
+                                <td><a href="{{route('admin.course.destroy',['id'=>$rs->id])}}" class="btn btn-block btn-danger btn-sm"
                                        onclick="return confirm('Are you sure ?')">Delete</a> </td>
-                                <td><a href="{{route('admin.category.show',['id'=>$rs->id])}}" class="btn btn-block btn-success btn-sm">Show</a> </td>
+                                <td><a href="{{route('admin.course.show',['id'=>$rs->id])}}" class="btn btn-block btn-success btn-sm">Show</a> </td>
                             </tr>
                         @endforeach
                         </tbody>
