@@ -1,8 +1,4 @@
-@extends('layouts.adminbase')
 
-@section('title', 'Admin Panel')
-
-@section('content')
     <div class="main-container">
 
         <div class="pd-ltr-20 xs-pd-20-10">
@@ -42,4 +38,3 @@
                 </div>
             </div>
 
-@endsection

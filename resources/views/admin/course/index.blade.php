@@ -55,7 +55,11 @@
                                     @endif
                                 </td>
 
-                                <td> </td>
+                                <td><a href="{{route('admin.image.index',['cid'=>$rs->id])}}"
+                                    onclick="return !window.open(this.href,'','top=50 left=100,width=1100,height=700')">
+                                        <img src="{{asset('assets')}}/admin/vendors/images/gallery.png" style="height: 40px">
+                                    </a>
+                                </td>
 
                                 <td>{{$rs->status}} </td>
                                 <td><a href="{{route('admin.course.edit',['id'=>$rs->id])}}" class="btn btn-block btn-info btn-sm">Edit</a> </td>
