@@ -1,7 +1,9 @@
 @extends('layouts.adminbase')
 
 @section('title', 'Add Course')
-
+@section('head')
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
+@endsection
 @section('content')
     <div class="main-container">
         <div class="pd-ltr-20 xs-pd-20-10">
@@ -63,9 +65,20 @@
                             <input class="form-control" type="number" name="tax" value="0">
                         </div>
                         <div class="form-group" >
-                            <label>Detail Inf.</label>
-                            <textarea class="form-control" name="detail">
+                            <label for ="exampleInputEmail1">Detail Inf.</label>
+                            <textarea class="form-control" id="detail" name="detail">
+
                             </textarea>
+                            <script>
+                                ClassicEditor
+                                    .create( document.querySelector( '#detail' ) )
+                                    .then( editor => {
+                                        console.log( editor );
+                                    } )
+                                    .catch( error => {
+                                        console.error( error );
+                                    } );
+                            </script>
                         </div>
 
                         <div class="form-group">

@@ -61,7 +61,7 @@
                             </tr>
                             <tr>
                                 <th>Detail Inf</th>
-                                <th>{{$data->detail}}</th>
+                                <th>{!! $data->detail !!}}</th>
                             </tr>
                             <tr>
                                 <th>Image</th>
