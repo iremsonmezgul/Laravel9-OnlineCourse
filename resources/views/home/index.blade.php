@@ -1,6 +1,7 @@
 @extends('layouts.frontbase')
 
 @section('title', 'Online Course Project')
+
 @section('slider')
    @include('home.slider')
  @endsection
