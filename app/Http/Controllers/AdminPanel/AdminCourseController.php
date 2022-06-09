@@ -10,9 +10,6 @@ use Illuminate\Support\Facades\Storage;
 
 class AdminCourseController extends Controller
 {
-
-
-
     /**
      * Display a listing of the resource.
      *
@@ -51,7 +48,7 @@ class AdminCourseController extends Controller
     {
         //
 
-         $data= new Course();
+        $data= new Course();
         $data->category_id = $request->category_id;
         $data->user_id = 0; //$request->user_id;
         $data->title = $request->title;
@@ -77,7 +74,7 @@ class AdminCourseController extends Controller
     public function show(Course $course,$id)
     {
         //
-        $data= Course::find($id);
+        $data = \App\Models\Course::find($id);
         return view('admin.course.show ',[
             'data' => $data
         ]);
