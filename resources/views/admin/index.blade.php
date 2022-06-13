@@ -1,3 +1,8 @@
+@extends('layouts.adminbase')
+
+@section('title', 'Admin Page')
+
+@section('content')
 
     <div class="main-container">
 
@@ -37,4 +42,7 @@
                 <div class="pd-20 bg-white border-radius-4 box-shadow mb-30">
                 </div>
             </div>
+@endsection
+
+
 
