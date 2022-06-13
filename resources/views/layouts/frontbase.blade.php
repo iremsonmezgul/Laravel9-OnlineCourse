@@ -4,6 +4,11 @@
 <head>
     <meta charset="utf-8">
     <title>@yield("title")</title>
+    <meta name="description" content="@yield("description")">
+    <meta name="keywords" content="@yield("keywords")">
+    <meta name="author" content="Irem SONMEZGUL">
+    <link rel="icon" type="image/x-icon" href="@yield("icon")">
+
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
